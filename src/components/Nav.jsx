@@ -9,7 +9,7 @@ const Menu = () => (
     <p className='py-1'><a href="#home">Home</a></p>
     <p className='py-1'><a href="#aboutus">About Us</a></p>
     <p className='py-1'><a href="#products">Products</a></p>
-    <p className='py-1'><a href="#contactus">Contact us</a></p>
+    <p className='py-1'><a href="#contactus">Contact Us</a></p>
     </>
   )
 
@@ -39,18 +39,12 @@ const Nav = () => {
                 </ul>
                 {/* TODO: Create dropdown menu with onClick function */}
                 <div className='lg:hidden relative'>
+                    {/* Show menu icon by default, show X when clicked */}
                     {toggleMenu
-                        ? <RiCloseLine className='animate-pulse' color='#6D6D6D' size={25} onClick={() => setToggleMenu(false)} />
-                        : <RiMenu3Line className='animate-pulse' color='#6D6D6D' size={25} onClick={() => setToggleMenu(true)} />
+                        ? <RiCloseLine className='animate-pulse cursor-pointer' color='#6D6D6D' size={25} onClick={() => setToggleMenu(false)} />
+                        : <RiMenu3Line className='animate-pulse cursor-pointer' color='#6D6D6D' size={25} onClick={() => setToggleMenu(true)} />
                     }
-                    {/* <img 
-                        src={hamburger}
-                        alt="hamburger"
-                        width={25}
-                        height={25}
-                        onClick={()=>{setToggleMenu(true)}}
-                        className='cursor-pointer'
-                    /> */}
+                    {/* When menu icon clicked also show dropdown menu */}
                     {toggleMenu && (
                         <div className='flex flex-col justify-end items-end bg-slate-gray text-white rounded-lg px-4 py-3 right-0 min-w-max absolute scale-up-center'>
                             <Menu />
